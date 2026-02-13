@@ -1,0 +1,191 @@
+#typeDiv {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 10%;
+    text-align: center;
+}
+
+#txt1, #txt2 {
+    font-size: 20px;
+    text-align: center;
+    text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4;
+    transition: text-shadow 0.2s ease, color 0.2s ease;
+}
+
+.flicker {
+    animation: flickerText 1s infinite alternate;
+}
+
+@keyframes flickerText {
+    0% { text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4; opacity: 0.85; }
+    50% { text-shadow: 0 0 15px #ff69b4, 0 0 25px #ff1493; opacity: 1; }
+    100% { text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4; opacity: 0.85; }
+}
+
+
+
+#content {
+    position: absolute;
+    top: 1%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 20%;
+}
+
+#together {
+    font-size: 25px;
+    text-align: center;
+    color: pink;
+}
+
+#timer {
+    text-align: center;
+    color: white;
+}
+
+#d, #h, #m, #s {
+    font-size: 19px;
+}
+
+#heartTxt {
+    position: absolute;
+    display: table;
+    vertical-align: middle;
+    top: 70%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 10%;
+    height: 8%;
+}
+
+#clickMe {
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+#heart {
+    width: 100%;
+    height: 100%;
+}
+
+#button {
+    background-image: url("../pic/love.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    background-position: center;
+    transition: 0.1s;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    perspective: 1000px; /* allows 3D effect */
+}
+
+#button:active {
+    width: 92%;
+    height: 92%;
+}
+
+/* Hover effects */
+#button:hover {
+    animation: spin3d 1s linear infinite, flickerHeart 1s infinite alternate;
+}
+
+/* 3D spin keyframes */
+@keyframes spin3d {
+    0% { transform: rotateY(0deg) rotateX(0deg) scale(1.1); }
+    25% { transform: rotateY(90deg) rotateX(10deg) scale(1.1); }
+    50% { transform: rotateY(180deg) rotateX(0deg) scale(1.1); }
+    75% { transform: rotateY(270deg) rotateX(-10deg) scale(1.1); }
+    100% { transform: rotateY(360deg) rotateX(0deg) scale(1.1); }
+}
+
+/* Flicker/glow keyframes */
+@keyframes flickerHeart {
+    0% { filter: drop-shadow(0 0 5px #ff69b4); opacity: 0.85; }
+    50% { filter: drop-shadow(0 0 20px #ff69b4); opacity: 1; }
+    100% { filter: drop-shadow(0 0 5px #ff69b4); opacity: 0.85; }
+}
+
+
+#imgCard {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45%;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(15px) saturate(150%);
+    -webkit-backdrop-filter: blur(15px) saturate(150%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures image won't overflow the container */
+}
+
+#imgCard img {
+    width: 100%;
+    height: auto;
+    max-height: 60vh; /* keeps image within viewport height */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+    object-fit: cover; /* makes image scale nicely */
+    transition: box-shadow 0.3s ease;
+}
+
+
+#imgCard:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0 12px 48px rgba(255, 105, 180, 0.5);
+}
+
+#imgCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+#imgCard img.flicker {
+    animation: flicker 1s infinite alternate;
+}
+
+#TxtContainer {
+    margin-top: 15px;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes flicker {
+    0% { filter: drop-shadow(0 0 5px #ff69b4); opacity: 0.85; }
+    50% { filter: drop-shadow(0 0 15px #ff69b4); opacity: 1; }
+    100% { filter: drop-shadow(0 0 5px #ff69b4); opacity: 0.85; }
+}
+
+#Txt, #tmp {
+    display: inline-block;
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
